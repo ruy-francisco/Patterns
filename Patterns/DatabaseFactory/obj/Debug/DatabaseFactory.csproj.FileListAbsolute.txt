@@ -1,0 +1,1 @@
+C:\Users\ruy.almeida\Documents\Visual Studio 2015\Projects\Patterns\Patterns\DatabaseFactory\bin\Debug\DatabaseFactory.exe.config
