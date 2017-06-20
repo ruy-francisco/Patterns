@@ -19,27 +19,30 @@ namespace DatabaseFactory.ConcreteClass
 
         public override IDbCommand CreateCommand()
         {
-            throw new NotImplementedException();
+            return new SqlCommand();
         }
 
         public override IDbConnection CreateOpenConnection()
         {
-            throw new NotImplementedException();
+            IDbConnection connection = new SqlConnection(connectionString);
+            connection.Open();
+
+            return connection;
         }
 
         public override IDbCommand CreateCommand(string textCommand, IDbConnection connection)
         {
-            throw new NotImplementedException();
+            return new SqlCommand(textCommand, (SqlConnection)connection);
         }
 
         public override IDbCommand CreateStoredProcCommand(string procName, IDbConnection connection)
         {
-            throw new NotImplementedException();
+            return new SqlCommand(procName, (SqlConnection)connection);
         }
 
         public override IDataParameter CreateParameter(string parameterName, object parameterValue)
         {
-            throw new NotImplementedException();
+            return new SqlParameter(parameterName, parameterValue);
         }
     }
 }

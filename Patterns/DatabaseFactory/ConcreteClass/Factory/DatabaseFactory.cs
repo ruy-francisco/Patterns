@@ -12,7 +12,7 @@ namespace DatabaseFactory.ConcreteClass
 {
     public sealed class DatabaseFactory
     {
-        public static DatabaseFactorySectionHandler sectionHandler = (DatabaseFactorySectionHandler)ConfigurationManager.GetSection("DatabaseFactoryConfiguration");
+        public static DatabaseFactorySectionHandler sectionHandler = (DatabaseFactorySectionHandler)ConfigurationManager.GetSection("customConfigurations/DatabaseFactorySectionHandler");
         private DatabaseFactory(){}
         public static Database CreateDatabase()
         {
