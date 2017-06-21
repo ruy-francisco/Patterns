@@ -5,35 +5,34 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Reflection;
 using System.Configuration;
-using DatabaseFactory.CustomConfig;
 using DatabaseFactory.Abstract.Class;
+using System.Collections.Specialized;
 
 namespace DatabaseFactory.ConcreteClass
 {
     public sealed class DatabaseFactory
     {
-        public static DatabaseFactorySectionHandler sectionHandler = (DatabaseFactorySectionHandler)ConfigurationManager.GetSection("customConfigurations/DatabaseFactorySectionHandler");
-        private DatabaseFactory(){}
-        public static Database CreateDatabase()
+        private DatabaseFactory(){ }
+        public static Database CreateDatabase(string dbSystem, string connectionString)
         {
-            if(sectionHandler.Name.Length == 0)
-            {
+            var sectionHandler = ConfigurationManager.GetSection("DatabaseFactory") as NameValueCollection;
+
+            if(sectionHandler[dbSystem].Length == 0)
                 throw new Exception("Database name not defined in DatabaseFactoryConfiguration section of App.config");
-            }
 
             try
             {
-                Type database = Type.GetType(sectionHandler.Name);
+                Type database = Type.GetType(Assembly.GetExecutingAssembly().GetTypes().Where(t => t.Name == dbSystem).FirstOrDefault().FullName);
                 ConstructorInfo constructor = database.GetConstructor(new Type[] { });
 
                 Database databaseObject = (Database)constructor.Invoke(null);
-                databaseObject.connectionString = sectionHandler.ConnectionString;
+                databaseObject.ConnectionString = connectionString;
 
                 return databaseObject;
             }
             catch(Exception e)
             {
-                throw new Exception("Error instantiating database " + sectionHandler.Name + ". ", e);
+                throw new Exception("Error instantiating database " + dbSystem + ". ", e);
             }
         }
 

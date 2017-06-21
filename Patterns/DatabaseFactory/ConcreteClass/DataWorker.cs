@@ -11,11 +11,11 @@ namespace DatabaseFactory.ConcreteClass
     {
         private static Database _database = null;
 
-        static DataWorker()
+        protected DataWorker(string dbSystem, string connectionString)
         {
             try
             {
-                _database = DatabaseFactory.CreateDatabase();
+                _database = DatabaseFactory.CreateDatabase(dbSystem, connectionString);
             }
             catch(Exception e)
             {

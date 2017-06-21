@@ -57,7 +57,6 @@
     <Compile Include="ConcreteClass\DataWorker.cs" />
     <Compile Include="ConcreteClass\Factory\DatabaseFactory.cs" />
     <Compile Include="ConcreteClass\MSSqlServer.cs" />
-    <Compile Include="CustomConfig\DatabaseFactorySectionHandler.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

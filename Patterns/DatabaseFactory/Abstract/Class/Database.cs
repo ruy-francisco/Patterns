@@ -9,10 +9,22 @@ namespace DatabaseFactory.Abstract.Class
 {
     public abstract class Database
     {
-        public string connectionString;
+        private string connectionString;
+        public string ConnectionString
+        {
+            get
+            {
+                return this.connectionString;
+            }
+            set
+            {
+                this.connectionString = FormatConnectionString(value);
+            }
+        }
 
         #region Abstract Functions
 
+        public abstract string FormatConnectionString(string rawConnectionString);
         public abstract IDbConnection CreateConnection();
         public abstract IDbCommand CreateCommand();
         public abstract IDbConnection CreateOpenConnection();

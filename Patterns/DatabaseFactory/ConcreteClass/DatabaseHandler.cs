@@ -9,16 +9,17 @@ namespace DatabaseFactory.ConcreteClass
 {
     public class DatabaseHandler: DataWorker
     {
-        public static bool CreateTable(string tableName)
+        public DatabaseHandler(string dbSystem, string connectionString): base(dbSystem, connectionString) { }
+        public bool CreateTable(string tableName)
         {
             try
             {
                 using(var openConnection = database.CreateOpenConnection())
                 {
-                    string sqlCommand = "create table @name(id int identity)";
+                    string sqlCommand = "create table teste(id int identity)";
 
                     var command = database.CreateCommand(sqlCommand, openConnection);
-                    command.Parameters.Add(database.CreateParameter("@name", tableName));
+                    //command.Parameters.Add(database.CreateParameter("@name", tableName));
 
                     command.ExecuteNonQuery();
 
