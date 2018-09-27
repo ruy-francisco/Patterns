@@ -1,0 +1,10 @@
+C:\Users\ruyfs\git_projects\Patterns\Factory\src\obj\Debug\netcoreapp2.0\src.csproj.CoreCompileInputs.cache
+C:\Users\ruyfs\git_projects\Patterns\Factory\src\obj\Debug\netcoreapp2.0\src.AssemblyInfoInputs.cache
+C:\Users\ruyfs\git_projects\Patterns\Factory\src\obj\Debug\netcoreapp2.0\src.AssemblyInfo.cs
+C:\Users\ruyfs\git_projects\Patterns\Factory\src\bin\Debug\netcoreapp2.0\src.deps.json
+C:\Users\ruyfs\git_projects\Patterns\Factory\src\bin\Debug\netcoreapp2.0\src.runtimeconfig.json
+C:\Users\ruyfs\git_projects\Patterns\Factory\src\bin\Debug\netcoreapp2.0\src.runtimeconfig.dev.json
+C:\Users\ruyfs\git_projects\Patterns\Factory\src\bin\Debug\netcoreapp2.0\src.dll
+C:\Users\ruyfs\git_projects\Patterns\Factory\src\bin\Debug\netcoreapp2.0\src.pdb
+C:\Users\ruyfs\git_projects\Patterns\Factory\src\obj\Debug\netcoreapp2.0\src.dll
+C:\Users\ruyfs\git_projects\Patterns\Factory\src\obj\Debug\netcoreapp2.0\src.pdb
